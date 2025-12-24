@@ -37,50 +37,76 @@ export default function ReviewsAndTeam() {
         <div className="pointer-events-none absolute inset-y-0 left-0 w-[60px] sm:w-[120px] bg-gradient-to-r from-black to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-[60px] sm:w-[120px] bg-gradient-to-l from-black to-transparent z-10" />
       </div>
+{/* ================= THE TEAM ================= */}
+<div className="w-full px-4 sm:px-6 lg:px-20 mt-20 sm:mt-[140px] text-center">
+  <h2 className="text-white text-[22px] sm:text-[28px] md:text-[32px] font-semibold">
+    The Team
+  </h2>
 
-      {/* ================= THE TEAM ================= */}
-      <div className="w-full px-4 sm:px-6 lg:px-20 mt-20 sm:mt-[140px] text-center">
-        <h2 className="text-white text-[22px] sm:text-[28px] md:text-[32px] font-semibold">
-          The Team
-        </h2>
+  <p className="text-gray-400 text-[12px] sm:text-[14px] mt-2">
+    Protected by a multi-level security architecture and is regularly
+  </p>
 
-        <p className="text-gray-400 text-[12px] sm:text-[14px] mt-2">
-          Protected by a multi-level security architecture and is regularly
-        </p>
+  {/* MOBILE SLIDER */}
+  <div className="relative mt-10 sm:mt-12 lg:hidden">
+    <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+      {["Jared E. Wallace", "Jessica Johnson", "Trevor Nash", "Kate Winslet"].map(
+        (name, i) => (
+          <div
+            key={i}
+            className="min-w-[220px] snap-center flex-shrink-0"
+          >
+            <div className="h-[260px] rounded-[20px] bg-gradient-to-b from-purple-500/40 to-black flex items-end p-4">
+              <p className="text-white text-[10px] leading-[14px] opacity-80">
+                Short bio text placed here describing experience and role.
+              </p>
+            </div>
+            <h4 className="mt-3 text-white text-[14px] font-semibold">
+              {name}
+            </h4>
+            <p className="text-gray-400 text-[12px]">
+              LinkedIn | Twitter
+            </p>
+          </div>
+        )
+      )}
+    </div>
+  </div>
 
-        <div className="relative mt-10 sm:mt-12 flex justify-center items-center gap-6 md:gap-8 flex-wrap lg:flex-nowrap">
+  {/* DESKTOP (UNCHANGED) */}
+  <div className="relative mt-10 sm:mt-12 hidden lg:flex justify-center items-center gap-8">
+    <img
+      src="/arrow-left.png"
+      alt="Previous"
+      className="absolute left-0 w-[36px] cursor-pointer"
+    />
 
-          <img
-            src="/arrow-left.png"
-            alt="Previous"
-            className="hidden lg:block absolute left-0 w-[36px] cursor-pointer"
-          />
-
-          {["Jared E. Wallace", "Jessica Johnson", "Trevor Nash", "Kate Winslet"].map(
-            (name, i) => (
-              <div key={i} className="w-[180px] sm:w-[200px] md:w-[220px]">
-                <div className="h-[220px] sm:h-[240px] md:h-[260px] rounded-[20px] bg-gradient-to-b from-purple-500/40 to-black flex items-end p-4">
-                  <p className="text-white text-[10px] leading-[14px] opacity-80">
-                    Short bio text placed here describing experience and role.
-                  </p>
-                </div>
-                <h4 className="mt-3 text-white text-[13px] sm:text-[14px] font-semibold">
-                  {name}
-                </h4>
-                <p className="text-gray-400 text-[11px] sm:text-[12px]">
-                  LinkedIn | Twitter
-                </p>
-              </div>
-            )
-          )}
-
-          <img
-            src="/arrow-right.png"
-            alt="Next"
-            className="hidden lg:block absolute right-0 w-[36px] cursor-pointer"
-          />
+    {["Jared E. Wallace", "Jessica Johnson", "Trevor Nash", "Kate Winslet"].map(
+      (name, i) => (
+        <div key={i} className="w-[220px]">
+          <div className="h-[260px] rounded-[20px] bg-gradient-to-b from-purple-500/40 to-black flex items-end p-4">
+            <p className="text-white text-[10px] leading-[14px] opacity-80">
+              Short bio text placed here describing experience and role.
+            </p>
+          </div>
+          <h4 className="mt-3 text-white text-[14px] font-semibold">
+            {name}
+          </h4>
+          <p className="text-gray-400 text-[12px]">
+            LinkedIn | Twitter
+          </p>
         </div>
-      </div>
+      )
+    )}
+
+    <img
+      src="/arrow-right.png"
+      alt="Next"
+      className="absolute right-0 w-[36px] cursor-pointer"
+    />
+  </div>
+</div>
+
 
       {/* ===== CSS ===== */}
       <style jsx>{`

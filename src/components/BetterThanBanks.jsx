@@ -6,7 +6,8 @@ export default function BetterThanBanks() {
       <div className="w-full bg-[#7E4BC2] rounded-none lg:rounded-[32px] overflow-hidden">
 
         {/* ================= TOP CONTENT ================= */}
-        <div className="max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-20 pt-12 sm:pt-14 pb-8 text-center text-white">
+     <div className="max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-20 pt-1 sm:pt-4 pb-8 text-center text-white">
+
           <h2 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-tight">
             Better than
             <br className="sm:hidden" /> Banks
