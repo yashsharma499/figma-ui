@@ -1,13 +1,11 @@
+
 export default function FasterSwap() {
   return (
-    <section className="w-full bg-[#0b0b0e] flex justify-center py-10 lg:py-[120px]">
-      {/* 👇 min-h ONLY on desktop */}
-      <div className="relative w-full max-w-[1728px] overflow-hidden lg:min-h-[900px]">
+    <section className="w-full bg-[#0b0b0e] flex justify-center pt-16 lg:pt-[120px] pb-0">
+      <div className="relative w-full max-w-[1728px] overflow-hidden">
 
-        {/* ================= MOBILE VIEW ================= */}
-        <div className="flex flex-col items-center lg:hidden">
-
-          {/* TEXT ABOVE IMAGE */}
+        {/* ================= MOBILE ================= */}
+        <div className="flex flex-col items-center lg:hidden overflow-hidden">
           <h1 className="text-white font-extrabold text-[44px] leading-none text-center">
             <span className="text-yellow-400">⚡</span> Faster
           </h1>
@@ -15,41 +13,37 @@ export default function FasterSwap() {
             Transactions
           </h1>
 
-          {/* IMAGE */}
-          <img
-            src="/phone.png"
-            alt="Phone UI"
-            className="
-              mt-6
-              mb-0
-              w-[260px]
-              drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]
-            "
-          />
+          <div className="mt-8 overflow-hidden">
+            <img
+              src="/phone.png"
+              alt="Phone UI"
+              className="w-[260px]"
+            />
+          </div>
         </div>
 
-        {/* ================= DESKTOP VIEW (UNCHANGED) ================= */}
-        <div className="hidden lg:block">
+        {/* ================= DESKTOP ================= */}
+        <div className="hidden lg:block relative">
 
-          {/* TOP LEFT TEXT */}
-          <div className="absolute top-12 left-20 z-10">
+          {/* LEFT TEXT */}
+          <div className="absolute top-24 left-12 z-10">
             <h1 className="flex items-center gap-4 text-white font-extrabold text-[96px] leading-none">
               <span className="text-yellow-400">⚡</span>
               Faster
             </h1>
           </div>
 
-          {/* CENTER PHONE */}
-          <div className="absolute inset-0 flex items-center justify-center z-20 -translate-x-16">
+          {/* CENTER PHONE — SLIGHTLY TOWARDS FASTER */}
+          <div className="flex justify-center z-20 relative -translate-x-15">
             <img
               src="/phone.png"
               alt="Phone UI"
-              className="w-[340px] drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
+              className="w-[360px]"
             />
           </div>
 
-          {/* BOTTOM RIGHT TEXT */}
-          <div className="absolute bottom-12 right-20 z-10">
+          {/* RIGHT TEXT */}
+          <div className="absolute bottom-10 right-12 z-10">
             <h1 className="text-white font-extrabold text-[96px] leading-none text-right">
               Transactions
             </h1>

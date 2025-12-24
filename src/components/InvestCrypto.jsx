@@ -31,14 +31,21 @@ export default function InvestCrypto() {
 
           {/* ================= RIGHT : IMAGE ================= */}
           <div className="flex flex-col items-center lg:items-end">
-
             <img
               src="/crypto-app-image.png"
               alt="Crypto Investment App Interface"
-              className="w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[500px] h-auto object-contain rounded-lg shadow-2xl"
+              className="
+                w-full
+                max-w-[420px]
+                sm:max-w-[480px]
+                lg:max-w-[500px]
+                h-auto
+                object-contain
+                rounded-lg
+              "
             />
 
-            {/* STORE BUTTONS — MOBILE ONLY (BELOW IMAGE) */}
+            {/* STORE BUTTONS — MOBILE ONLY */}
             <div className="flex lg:hidden mt-8 gap-4">
               <StoreButton img="/app-store-icon.png" alt="App Store" />
               <StoreButton img="/play-store-icon.png" alt="Play Store" />
