@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -39,7 +40,7 @@ export default function Navbar() {
             className="hidden md:block h-[44px] cursor-pointer"
           />
 
-          {/* ✅ HAMBURGER — MOBILE ONLY */}
+          {/* HAMBURGER */}
           <button
             onClick={() => setOpen(true)}
             className="block md:hidden text-white"
@@ -51,10 +52,10 @@ export default function Navbar() {
 
       {/* ================= MOBILE MENU ================= */}
       {open && (
-        <div className="fixed inset-0 z-[100] bg-black text-white flex flex-col">
+        <div className="fixed inset-0 z-[9999] bg-black text-white flex flex-col overflow-visible">
 
-          {/* TOP */}
-          <div className="flex items-center justify-between px-6 py-6">
+          {/* TOP BAR */}
+          <div className="flex items-center justify-between px-6 pt-8 pb-6">
             <div className="flex items-baseline gap-2">
               <span className="text-xl font-semibold">plena</span>
               <span className="text-xs tracking-widest opacity-60">
@@ -62,20 +63,32 @@ export default function Navbar() {
               </span>
             </div>
 
-            <button onClick={() => setOpen(false)}>
-              <X size={28} />
-            </button>
+           {/* ✅ CLOSE BUTTON */}
+<button
+  onClick={() => setOpen(false)}
+  className="
+    absolute
+    top-6
+    right-6
+    z-[10000]
+    text-white
+  "
+>
+  <X size={28} />
+</button>
           </div>
 
-          {/* ✅ SAME OPTIONS AS NAVBAR */}
+          {/* MENU ITEMS */}
           <div className="flex-1 flex flex-col items-center justify-center gap-7 text-2xl">
             {navItems.map((item) => (
-              <span key={item}>{item}</span>
+              <span key={item} className="cursor-pointer">
+                {item}
+              </span>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="px-6 pb-8">
+          <div className="px-6 pb-10">
             <img
               src="/download-app-button.png"
               alt="Download App"
@@ -90,4 +103,3 @@ export default function Navbar() {
     </>
   );
 }
-

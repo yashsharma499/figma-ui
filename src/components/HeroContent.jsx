@@ -1,18 +1,18 @@
 
 export default function HeroContent() {
   return (
-    <section className="relative w-full bg-black overflow-hidden">
-      <div className="relative max-w-[1728px] mx-auto px-5 sm:px-6 lg:px-20 pt-14 sm:pt-16 lg:pt-20 pb-16 sm:pb-20">
+    <section className="relative w-full bg-black overflow-visible lg:overflow-hidden z-10">
+      <div className="relative max-w-[1728px] mx-auto px-5 sm:px-6 lg:px-20 pt-14 sm:pt-16 lg:pt-20 pb-24 lg:pb-20">
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-          {/* ================= LEFT CONTENT ================= */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          
+          {/* ================= LEFT ================= */}
           <div className="z-10 text-center lg:text-left">
             <h1 className="font-extrabold leading-tight text-white">
-              <span className="block text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px]">
+              <span className="block text-[36px] sm:text-[44px] md:text-[56px] lg:text-[72px]">
                 Be Your
               </span>
-              <span className="block text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px]">
+              <span className="block text-[36px] sm:text-[44px] md:text-[56px] lg:text-[72px]">
                 Own Bank
               </span>
             </h1>
@@ -20,71 +20,84 @@ export default function HeroContent() {
             <img
               src="/underline.png"
               alt=""
-              className="mt-3 mx-auto lg:mx-0 w-[100px] sm:w-[140px]"
+              className="mt-3 mx-auto lg:mx-0 w-[120px] sm:w-[140px]"
             />
 
-            <p className="mt-5 text-gray-400 max-w-[360px] sm:max-w-[480px] mx-auto lg:mx-0 text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-              Introducing Plena 2.0, Self-Custodial Smart Wallet with
-              EIP-4337: Account Abstraction
+            <p className="mt-5 text-gray-400 max-w-[420px] mx-auto lg:mx-0 text-sm sm:text-base">
+              Introducing Plena 2.0, Self-Custodial Smart Wallet with EIP-4337:
+              Account Abstraction
             </p>
 
-            {/* ================= CTA BUTTONS ================= */}
-            <div className="mt-8 flex items-center justify-center lg:justify-start gap-6">
-              <img
-                src="/get-the-app-btn.png"
-                alt="Get the App"
-                className="h-[48px] sm:h-[52px] cursor-pointer hover:opacity-90 transition"
-              />
+            {/* ✅ RESPONSIVE BUTTONS FIX */}
+            <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
+  <img
+    src="/get-the-app-btn.png"
+    alt="Get the App"
+    className="h-[36px] sm:h-[46px] cursor-pointer shrink-0"
+  />
+  <img
+    src="/play-icon.png"
+    alt="Watch Intro"
+    className="h-[36px] sm:h-[46px] cursor-pointer shrink-0"
+  />
+</div>
 
-              <img
-                src="/play-icon.png"
-                alt="Watch Intro"
-                className="h-[48px] sm:h-[52px] cursor-pointer hover:opacity-90 transition"
-              />
-            </div>
           </div>
 
-          {/* ================= RIGHT CONTENT (PHONES) ================= */}
-          <div className="relative flex justify-center lg:justify-end mt-6 lg:mt-0">
-
+          {/* ================= RIGHT (PHONES) ================= */}
+          <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-[-5cm]">
+            
             {/* Glow */}
             <div className="absolute inset-0 flex justify-center">
-              <div className="w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] lg:w-[600px] lg:h-[600px] bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-full blur-[120px]" />
+              <div className="w-[420px] h-[420px] lg:w-[700px] lg:h-[700px] bg-purple-500/20 rounded-full blur-[160px]" />
             </div>
 
-            {/* Phones */}
-            <div className="relative w-full max-w-[300px] sm:max-w-[380px] md:max-w-[460px] h-[340px] sm:h-[420px] md:h-[500px] flex items-end justify-center">
-
-              {/* Back Phone */}
+            {/* Phones wrapper */}
+            <div
+              className="
+                relative
+                w-full
+                max-w-[360px]
+                sm:max-w-[420px]
+                lg:max-w-[700px]
+                h-[320px]
+                sm:h-[420px]
+                lg:h-[620px]
+                flex
+                items-end
+                justify-center
+              "
+            >
+              {/* Back phone */}
               <img
                 src="/hero_phone_back.png"
                 alt="Phone Back"
                 className="
                   absolute
                   left-1/2
-                  -translate-x-[95%]
+                  -translate-x-[85%]
                   bottom-0
-                  w-[190px] sm:w-[240px] md:w-[300px]
+                  w-[220px]
+                  sm:w-[260px]
+                  lg:w-[380px]
                   rotate-[6deg]
-                  origin-bottom-right
-                  drop-shadow-2xl
                   z-10
                 "
               />
 
-              {/* Front Phone */}
+              {/* Front phone */}
               <img
                 src="/herophone.png"
                 alt="Phone Front"
                 className="
                   absolute
                   left-1/2
-                  -translate-x-[5%]
+                  -translate-x-[15%]
                   bottom-0
-                  w-[190px] sm:w-[240px] md:w-[300px]
+                  w-[220px]
+                  sm:w-[260px]
+                  lg:w-[380px]
                   -rotate-[6deg]
-                  origin-bottom-left
-                  drop-shadow-2xl
                   z-20
                 "
               />
@@ -92,17 +105,11 @@ export default function HeroContent() {
           </div>
         </div>
 
-        {/* ================= MOBILE APP NOTE ================= */}
-        <div className="mt-6 flex flex-col items-center lg:hidden">
-          <p className="text-xs text-gray-400">
-            *Available for iOS & Android
-          </p>
-        </div>
-
+        {/* Mobile note */}
+        <p className="mt-8 text-center text-xs text-gray-400 lg:hidden">
+          *Available for iOS & Android
+        </p>
       </div>
-
-      {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
     </section>
   );
 }
