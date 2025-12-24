@@ -2,11 +2,11 @@
 
 export default function ReviewsAndTeam() {
   return (
-    <section className="w-full bg-black py-16 lg:py-[120px] overflow-hidden">
+    <section className="w-full bg-[#141414] pt-6 pb-0 lg:pt-10 lg:pb-0 overflow-hidden"> {/* fixed spacing */}
 
-      {/* ================= BOXED CONTENT ================= */}
+      {/* ================= REVIEWS ================= */}
       <div className="w-full px-4 sm:px-6 lg:px-20">
-        <div className="w-full bg-[#141414] rounded-[24px] sm:rounded-[32px] px-4 sm:px-6 md:px-12 lg:px-16 py-12 sm:py-14 relative overflow-hidden">
+        <div className="rounded-[32px] px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-10">
 
           <h2 className="text-center text-white text-[22px] sm:text-[28px] md:text-[32px] font-semibold">
             What our users say 💬
@@ -15,144 +15,157 @@ export default function ReviewsAndTeam() {
           <p className="text-center text-gray-400 text-[12px] sm:text-[14px] mt-2 max-w-[420px] mx-auto">
             Protected by a multi-level security architecture and is regularly
           </p>
+
         </div>
       </div>
 
-      {/* ================= FULL WIDTH MARQUEE ================= */}
-      <div className="relative mt-10 w-full overflow-hidden">
 
-        {/* ROW 1 */}
-        <div className="flex gap-4 sm:gap-6 animate-scroll px-4 sm:px-6 lg:px-20">
-          <ReviewRow />
-          <ReviewRow />
+      {/* ================= MARQUEE ================= */}
+      <div className="relative mt-6 w-full overflow-hidden">
+
+        <div className="flex gap-6 animate-scroll px-4 sm:px-6 lg:px-20">
+          <ReviewRow /> <ReviewRow />
         </div>
 
-        {/* ROW 2 */}
-        <div className="flex gap-4 sm:gap-6 animate-scroll-reverse mt-6 px-4 sm:px-6 lg:px-20">
-          <ReviewRow />
-          <ReviewRow />
+        <div className="flex gap-6 animate-scroll-reverse mt-4 px-4 sm:px-6 lg:px-20">
+          <ReviewRow /> <ReviewRow />
         </div>
 
-        {/* FADE EDGES */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[60px] sm:w-[120px] bg-gradient-to-r from-black to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[60px] sm:w-[120px] bg-gradient-to-l from-black to-transparent z-10" />
+        <div className="absolute inset-y-0 left-0 w-[100px] bg-gradient-to-r from-[#141414] to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-[100px] bg-gradient-to-l from-[#141414] to-transparent z-10" />
+
       </div>
-{/* ================= THE TEAM ================= */}
-<div className="w-full px-4 sm:px-6 lg:px-20 mt-20 sm:mt-[140px] text-center">
-  <h2 className="text-white text-[22px] sm:text-[28px] md:text-[32px] font-semibold">
-    The Team
-  </h2>
 
-  <p className="text-gray-400 text-[12px] sm:text-[14px] mt-2">
-    Protected by a multi-level security architecture and is regularly
-  </p>
 
-  {/* MOBILE SLIDER */}
-  <div className="relative mt-10 sm:mt-12 lg:hidden">
-    <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-      {["Jared E. Wallace", "Jessica Johnson", "Trevor Nash", "Kate Winslet"].map(
-        (name, i) => (
-          <div
-            key={i}
-            className="min-w-[220px] snap-center flex-shrink-0"
-          >
-            <div className="h-[260px] rounded-[20px] bg-gradient-to-b from-purple-500/40 to-black flex items-end p-4">
-              <p className="text-white text-[10px] leading-[14px] opacity-80">
-                Short bio text placed here describing experience and role.
-              </p>
-            </div>
-            <h4 className="mt-3 text-white text-[14px] font-semibold">
-              {name}
-            </h4>
-            <p className="text-gray-400 text-[12px]">
-              LinkedIn | Twitter
-            </p>
+      {/* ================= TEAM SECTION ================= */}
+      <div className="w-full bg-black mt-10 pt-12 pb-0 px-4 sm:px-6 lg:px-20 text-center"> {/* bottom removed */}
+
+        <h2 className="text-white text-[22px] sm:text-[28px] md:text-[32px] font-semibold">
+          The Team
+        </h2>
+
+        <p className="text-gray-400 text-[12px] sm:text-[14px] mt-2">
+          Protected by a multi-level security architecture and is regularly
+        </p>
+
+
+        {/* -------- MOBILE SLIDER -------- */}
+        <div className="relative mt-8 sm:mt-10 lg:hidden">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+            {teamData.map((m,i)=>(
+              <div key={i} className="min-w-[220px] snap-center flex-shrink-0">
+                <TeamCard member={m}/>
+              </div>
+            ))}
           </div>
-        )
-      )}
-    </div>
-  </div>
-
-  {/* DESKTOP (UNCHANGED) */}
-  <div className="relative mt-10 sm:mt-12 hidden lg:flex justify-center items-center gap-8">
-    <img
-      src="/arrow-left.png"
-      alt="Previous"
-      className="absolute left-0 w-[36px] cursor-pointer"
-    />
-
-    {["Jared E. Wallace", "Jessica Johnson", "Trevor Nash", "Kate Winslet"].map(
-      (name, i) => (
-        <div key={i} className="w-[220px]">
-          <div className="h-[260px] rounded-[20px] bg-gradient-to-b from-purple-500/40 to-black flex items-end p-4">
-            <p className="text-white text-[10px] leading-[14px] opacity-80">
-              Short bio text placed here describing experience and role.
-            </p>
-          </div>
-          <h4 className="mt-3 text-white text-[14px] font-semibold">
-            {name}
-          </h4>
-          <p className="text-gray-400 text-[12px]">
-            LinkedIn | Twitter
-          </p>
         </div>
-      )
-    )}
-
-    <img
-      src="/arrow-right.png"
-      alt="Next"
-      className="absolute right-0 w-[36px] cursor-pointer"
-    />
-  </div>
-</div>
 
 
-      {/* ===== CSS ===== */}
+        {/* -------- DESKTOP WITH ARROWS -------- */}
+        <div className="relative mt-10 hidden lg:flex items-center justify-center">
+
+          <button className="absolute left-0 w-[40px] opacity-70 hover:opacity-100 transition">
+            <img src="/arrow-left.png" />
+          </button>
+
+          <div className="flex gap-8">
+            {teamData.map((m,i)=>(
+              <div key={i} className="w-[220px]">
+                <TeamCard member={m}/>
+              </div>
+            ))}
+          </div>
+
+          <button className="absolute right-0 w-[40px] opacity-70 hover:opacity-100 transition">
+            <img src="/arrow-right.png"/>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      {/* ================= ANIMATIONS ================= */}
       <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes scrollReverse {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
-        .animate-scroll {
-          width: max-content;
-          animation: scroll 28s linear infinite;
-        }
-        .animate-scroll-reverse {
-          width: max-content;
-          animation: scrollReverse 28s linear infinite;
-        }
-        .animate-scroll:hover,
-        .animate-scroll-reverse:hover {
-          animation-play-state: paused;
-        }
+        @keyframes scroll {0%{transform:translateX(0);}100%{transform:translateX(-50%);} }
+        @keyframes scrollReverse {0%{transform:translateX(-50%);}100%{transform:translateX(0);} }
+        .animate-scroll{width:max-content;animation:scroll 25s linear infinite;}
+        .animate-scroll-reverse{width:max-content;animation:scrollReverse 25s linear infinite;}
       `}</style>
+
     </section>
   );
 }
 
-/* ===== REVIEW CARDS ===== */
+
+/* ================= TEAM CARD ================= */
+
+function TeamCard({ member }) {
+  return (
+    <div className="rounded-[24px] overflow-hidden bg-black">
+
+      {/* IMAGE + Hover Bio */}
+      <div className="group relative h-[260px] overflow-hidden rounded-[20px]">
+
+        <img
+          src={member.image}
+          className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+        />
+
+        <div className="
+          absolute inset-0 bg-black/75 flex items-center justify-center opacity-0 
+          group-hover:opacity-100 transition duration-500 px-4 text-center
+        ">
+          <p className="text-white text-[12px] leading-[18px]">{member.bio}</p>
+        </div>
+
+      </div>
+
+
+      {/* BIO BELOW IMAGE */}
+      <div className="px-4 pt-4 pb-6 text-left">
+
+        <h4 className="text-white text-[16px] font-medium">{member.name}</h4>
+        <p className="text-[#9CA3AF] text-[13px] mt-1">{member.role}</p>
+
+        <div className="w-[34px] h-[1px] bg-[#6B7280] mt-3 mb-3"></div>
+
+        <div className="text-[13px] flex items-center gap-2">
+          <a className="text-[#8B5CF6] hover:underline">LinkedIn</a>
+          <span className="text-gray-500">|</span>
+          <a className="text-white hover:underline">Twitter</a>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+
+/* ================= TEAM DATA ================= */
+const teamData = [
+  { name:"Jared E. Wallace", role:"Founder", image:"/person1.png", bio:"Blockchain strategist with 10+ years experience in Web3." },
+  { name:"Jessica Johnson", role:"Product Lead", image:"/person2.png", bio:"Design-first thinker focused on intuitive crypto UX." },
+  { name:"Trevor Nash", role:"Tech Lead", image:"/person3.png", bio:"Full-stack engineer specializing in secure systems." },
+  { name:"Kate Winslet", role:"Marketing", image:"/person1.png", bio:"Growth-focused marketer with deep crypto insights." },
+];
+
+
+/* ================= REVIEW CARD ROW ================= */
 function ReviewRow() {
   return (
     <>
       {Array.from({ length: 4 }).map((_, i) => (
-        <div
-          key={i}
-          className="w-[220px] sm:w-[240px] md:w-[260px] border border-white/20 rounded-[16px] p-4 sm:p-5 h-[150px] sm:h-[160px] flex flex-col justify-between bg-transparent"
+        <div key={i}
+          className="w-[240px] border border-white/20 rounded-[16px] p-5 h-[160px] flex flex-col justify-between"
         >
-          <p className="text-gray-300 text-[11px] sm:text-[12px] leading-[18px]">
-            Experience has been seamless and smooth. Great UI, fast transactions
-            and very secure platform overall.
+          <p className="text-gray-300 text-[12px] leading-[18px]">
+            Experience has been seamless and smooth. Great UI, fast transactions and very secure platform overall.
           </p>
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-2 text-gray-400 text-[11px] sm:text-[12px]">
-              ▶ Logan
-            </div>
-            <div className="text-white text-[10px]">★★★★★</div>
+
+          <div className="flex justify-between text-white text-[11px]">
+            <span>▶ Logan</span>
+            ★★★★★
           </div>
         </div>
       ))}

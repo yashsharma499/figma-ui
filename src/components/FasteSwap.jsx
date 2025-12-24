@@ -17,7 +17,7 @@ export default function FasterSwap() {
             <img
               src="/phone.png"
               alt="Phone UI"
-              className="w-[260px]"
+              className="w-[260px]"s
             />
           </div>
         </div>

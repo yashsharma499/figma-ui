@@ -15,16 +15,22 @@ export default function FeaturesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
           {/* LEFT BIG CARD */}
-          <div className="lg:row-span-2 bg-[rgba(32,32,32,0.6)] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between">
-            <div className="flex justify-center mb-6 lg:mb-0">
+          <div className="lg:row-span-2 bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6 lg:p-8 flex flex-col justify-between">
+            
+            {/* IMAGE POSITION FIX */}
+            <div className="flex justify-center mt-4">
               <img
                 src="/bitcoin-to-dollar-exchnage 1.png"
                 alt="Swap"
-                className="w-[200px] lg:w-[240px]"
+                className="
+                  w-[180px]
+                  sm:w-[200px]
+                  lg:w-[240px]
+                "
               />
             </div>
 
-            <div>
+            <div className="mt-6">
               <h3 className="text-white text-[20px] lg:text-[22px] font-semibold mb-2">
                 Swap Crypto
                 <br />
@@ -38,13 +44,19 @@ export default function FeaturesSection() {
           </div>
 
           {/* LENDING */}
-          <div className="bg-[rgba(32,32,32,0.6)] rounded-[20px] p-6 relative">
+          <div className="relative bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6">
             <img
               src="/lending.png"
               alt="Lending"
-              className="absolute top-4 right-4 w-[56px] lg:w-[72px]"
+              className="
+                absolute top-4 right-4
+                w-[52px]
+                sm:w-[60px]
+                lg:w-[72px]
+              "
             />
-            <div className="pt-[64px] lg:pt-[72px]">
+
+            <div className="pt-[64px]">
               <h3 className="text-white text-[18px] lg:text-[20px] font-semibold mb-2">
                 Lending
                 <br />
@@ -57,13 +69,19 @@ export default function FeaturesSection() {
           </div>
 
           {/* STAKE */}
-          <div className="bg-[rgba(32,32,32,0.6)] rounded-[20px] p-6 relative">
+          <div className="relative bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6">
             <img
               src="/stake.png"
               alt="Stake"
-              className="absolute top-4 right-4 w-[56px] lg:w-[72px]"
+              className="
+                absolute top-4 right-4
+                w-[52px]
+                sm:w-[60px]
+                lg:w-[72px]
+              "
             />
-            <div className="pt-[64px] lg:pt-[72px]">
+
+            <div className="pt-[64px]">
               <h3 className="text-white text-[18px] lg:text-[20px] font-semibold mb-2">
                 Stake your
                 <br />
@@ -76,7 +94,8 @@ export default function FeaturesSection() {
           </div>
 
           {/* LIQUIDITY */}
-          <div className="sm:col-span-2 bg-[rgba(32,32,32,0.6)] rounded-[24px] p-6 lg:p-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div className="sm:col-span-2 bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6 lg:p-8 flex items-center justify-between gap-6">
+            
             <div className="max-w-[360px]">
               <h3 className="text-white text-[20px] lg:text-[22px] font-semibold mb-2">
                 Liquidity Pools
@@ -86,10 +105,17 @@ export default function FeaturesSection() {
                 in one place!
               </p>
             </div>
+
+            {/* IMAGE POSITION FIX */}
             <img
               src="/mining-cart 1.png"
               alt="Liquidity"
-              className="w-[160px] lg:w-[200px]"
+              className="
+                w-[140px]
+                sm:w-[160px]
+                lg:w-[200px]
+                flex-shrink-0
+              "
             />
           </div>
 
