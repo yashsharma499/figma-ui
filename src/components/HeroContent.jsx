@@ -8,16 +8,36 @@ export default function HeroContent() {
 
           {/* ================= LEFT ================= */}
           <div className="z-10 text-center lg:text-left">
-            <h1 className="font-extrabold leading-tight text-white">
-              <span className="block text-[36px] sm:text-[44px] md:text-[56px] lg:text-[72px]">
-                Be Your
-              </span>
-              <span className="block text-[36px] sm:text-[44px] md:text-[56px] lg:text-[72px]">
-                Own Bank
-              </span>
-            </h1>
 
-            <p className="mt-5 text-gray-400 max-w-[420px] mx-auto lg:mx-0 text-sm sm:text-base">
+            {/* TEXT IMAGE */}
+            <div className="relative inline-block">
+              <img
+                src="/Be_Your_Own_Bank_hero.png"
+                alt="Be Your Own Bank"
+                className="
+                  mx-auto
+                  lg:mx-0
+                  w-[260px]
+                  sm:w-[360px]
+                  md:w-[460px]
+                  lg:w-[720px]
+                "
+              />
+
+              {/* YELLOW UNDERLINE IMAGE (POSITION FIXED) */}
+              <img
+                src="/own_hero.png"
+                alt=""
+                className="
+                  absolute
+                  left-[10%]
+                  -bottom-10
+                  w-[200px]
+                "
+              />
+            </div>
+
+            <p className="mt-6 text-gray-400 max-w-[420px] mx-auto lg:mx-0 text-sm sm:text-base">
               Introducing Plena 2.0, Self-Custodial Smart Wallet with EIP-4337:
               Account Abstraction
             </p>
