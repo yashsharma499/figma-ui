@@ -6,7 +6,6 @@ export default function OurStoriesSection() {
 
         {/* ================= HEADER ================= */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-6 mb-12 lg:mb-[64px] text-center lg:text-left">
-
           <div className="max-w-[520px]">
             <h2 className="text-white text-[26px] sm:text-[32px] md:text-[40px] font-semibold mb-4">
               Our Stories
@@ -21,38 +20,24 @@ export default function OurStoriesSection() {
           <img
             src="/more_stories.png"
             alt="More stories"
-            role="button"
-            tabIndex={0}
-            className="hidden lg:block h-[40px] w-auto cursor-pointer hover:opacity-90 transition"
+            className="hidden lg:block h-[40px] cursor-pointer hover:opacity-90 transition"
           />
         </div>
 
-        {/* ================= STORIES GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[40px]">
+        {/* ================= STORIES ================= */}
 
-          {/* CARD */}
-          {[
-            "/1.png",
-            "/2.png",
-            "/3.png"
-          ].map((img, i) => (
-            <div key={i}>
-              <div className="w-full h-[220px] sm:h-[260px] lg:h-[300px] rounded-[20px] lg:rounded-[24px] overflow-hidden mb-5 lg:mb-6">
-                <img
-                  src={img}
-                  alt={`Story ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        {/* Desktop grid view */}
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[40px]">
+          {[ "/1.png", "/2.png", "/3.png" ].map((img, i) => (
+            <StoryCard key={i} img={img} />
+          ))}
+        </div>
 
-              <h3 className="text-white text-[16px] sm:text-[18px] font-semibold mb-2">
-                Celsius will compensate consumers with a new token
-              </h3>
-
-              <p className="text-gray-400 text-[13px] sm:text-[14px] leading-[20px] sm:leading-[22px]">
-                Celsius, a defunct crypto lending company, will likely release a
-                new token aimed at reimbursing creditors…
-              </p>
+        {/* Mobile horizontal scroll view */}
+        <div className="sm:hidden overflow-x-auto flex gap-6 snap-x snap-mandatory scrollbar-hide px-1">
+          {[ "/1.png", "/2.png", "/3.png" ].map((img, i) => (
+            <div key={i} className="min-w-[260px] snap-center">
+              <StoryCard img={img} />
             </div>
           ))}
         </div>
@@ -60,15 +45,33 @@ export default function OurStoriesSection() {
         {/* ================= MOBILE MORE STORIES BUTTON ================= */}
         <div className="flex justify-center mt-12 lg:hidden">
           <img
-            src="/more_stories.png" // 🔁 you will add this image
+            src="/more_stories.png"
             alt="More stories"
-            role="button"
-            tabIndex={0}
-            className="h-[36px] w-auto cursor-pointer hover:opacity-90 transition"
+            className="h-[36px] cursor-pointer hover:opacity-90 transition"
           />
         </div>
 
       </div>
     </section>
+  );
+}
+
+/* ================= STORY CARD COMPONENT ================= */
+function StoryCard({ img }) {
+  return (
+    <div>
+      <div className="w-full h-[220px] rounded-[20px] overflow-hidden mb-4">
+        <img src={img} className="w-full h-full object-cover" />
+      </div>
+
+      <h3 className="text-white text-[16px] sm:text-[18px] font-semibold mb-2">
+        Celsius will compensate consumers with a new token
+      </h3>
+
+      <p className="text-gray-400 text-[13px] sm:text-[14px] leading-[20px]">
+        Celsius, a defunct crypto lending company, will likely release a new token
+        aimed at reimbursing creditors…
+      </p>
+    </div>
   );
 }

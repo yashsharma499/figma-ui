@@ -1,13 +1,13 @@
 
 export default function BetterThanBanks() {
   return (
-    <section className="w-full bg-[#7E4BC2] py-16 sm:py-20 lg:py-[120px]">
-      {/* FULL WIDTH CARD */}
-      <div className="w-full bg-[#7E4BC2] rounded-none lg:rounded-[32px] overflow-hidden">
+    <section className="w-full bg-[#7E4BC2] py-10 sm:py-16 lg:py-[120px] pb-0">
+      
+      {/* Main Wrapper */}
+      <div className="w-full bg-[#7E4BC2] rounded-none lg:rounded-[32px] overflow-hidden sm:rounded-[0]">
 
         {/* ================= TOP CONTENT ================= */}
-     <div className="max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-20 pt-1 sm:pt-4 pb-8 text-center text-white">
-
+        <div className="max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-20 pt-1 sm:pt-4 pb-6 text-center text-white">
           <h2 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-tight">
             Better than
             <br className="sm:hidden" /> Banks
@@ -18,34 +18,32 @@ export default function BetterThanBanks() {
           </p>
         </div>
 
-        {/* ================= VIDEO SECTION ================= */}
-        <div className="flex justify-center px-4 sm:px-8 pb-0">
-          <div className="relative w-full max-w-[1100px] rounded-[20px] overflow-hidden shadow-2xl">
+        {/* ================= VIDEO ================= */}
+        <div className="flex justify-center px-0 sm:px-8 pb-0">
+          <div className="relative w-full max-w-[1100px] 
+              rounded-none sm:rounded-[20px] lg:rounded-[20px]
+              overflow-hidden shadow-2xl">
 
+            {/* Thumbnail image */}
             <img
               src="/better-than-banks.png"
               alt="Better than Banks"
-              className="w-full h-auto object-cover block"
+              className="w-full h-auto object-cover block
+                         rounded-none sm:rounded-[20px] lg:rounded-[20px]"
             />
 
+            {/* Black overlay */}
             <div className="absolute inset-0 bg-black/25" />
 
+            {/* Play button */}
             <img
               src="/playbutton.png"
               alt="Play video"
               className="
-                absolute
-                top-1/2
-                left-1/2
-                -translate-x-1/2
-                -translate-y-1/2
-                z-20
-                w-[114px]
-                h-[114px]
-                sm:w-[120px]
-                sm:h-[120px]
-                cursor-pointer
-                drop-shadow-2xl
+                absolute top-1/2 left-1/2
+                -translate-x-1/2 -translate-y-1/2
+                z-20 w-[90px] h-[90px] sm:w-[120px] sm:h-[120px]
+                cursor-pointer drop-shadow-2xl
               "
             />
           </div>

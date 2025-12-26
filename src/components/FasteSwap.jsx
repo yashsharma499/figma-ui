@@ -4,23 +4,29 @@ export default function FasterSwap() {
     <section className="w-full bg-[#0b0b0e] flex justify-center pt-16 lg:pt-[120px] pb-0">
       <div className="relative w-full max-w-[1728px] overflow-hidden">
 
-        {/* ================= MOBILE ================= */}
-        <div className="flex flex-col items-center lg:hidden overflow-hidden">
-          <h1 className="text-white font-extrabold text-[44px] leading-none text-center">
-            <span className="text-yellow-400">⚡</span> Faster
-          </h1>
-          <h1 className="text-white font-extrabold text-[44px] leading-none text-center mt-1">
-            Transactions
-          </h1>
+{/* ================= MOBILE ================= */}
+<div className="flex flex-col lg:hidden overflow-hidden">
 
-          <div className="mt-8 overflow-hidden">
-            <img
-              src="/phone.png"
-              alt="Phone UI"
-              className="w-[260px]"s
-            />
-          </div>
-        </div>
+  {/* ⚡ + Faster together aligned left */}
+  <div className="w-full flex">
+    <h1 className="text-white font-extrabold text-[44px] leading-none flex items-center">
+      <span className="text-yellow-400 text-[46px] mr-[0px]">⚡</span> {/* No gap now */}
+      Faster
+    </h1>
+  </div>
+
+  {/* Transactions slightly right for stagger effect */}
+  <div className="w-full flex justify-start mt-2 ml-15">  {/* Adjust ml-10 for exact position */}
+    <h1 className="text-white font-extrabold text-[44px] leading-none">
+      Transactions
+    </h1>
+  </div>
+
+  <div className="mt-8 flex justify-center w-full">
+    <img src="/phone.png" alt="Phone UI" className="w-[260px]" />
+  </div>
+</div>
+
 
         {/* ================= DESKTOP ================= */}
         <div className="hidden lg:block relative">
