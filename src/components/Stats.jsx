@@ -1,4 +1,3 @@
-
 export default function Stats() {
   return (
     <section className="relative w-full bg-black z-20 mt-10 lg:mt-0">

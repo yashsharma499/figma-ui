@@ -1,4 +1,3 @@
-
 export default function HeroContent() {
   return (
     <section className="relative w-full bg-black overflow-hidden z-10">
