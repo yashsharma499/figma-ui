@@ -1,57 +1,82 @@
 
 export default function FeaturesSection() {
   return (
-    <section 
-      className="w-full bg-black flex justify-center 
-                 py-8 sm:py-10 lg:py-[120px]"  // mobile small margin restored
-    >
-      <div className="w-full max-w-[1328px] px-5 sm:px-6">
+    <section className="w-full bg-black flex justify-center py-14 lg:py-[120px]">
+      <div className="w-full max-w-[1328px] px-4 sm:px-6">
 
-        <h2 className="text-white text-[32px] sm:text-[40px] lg:text-[48px] font-bold leading-tight lg:leading-[56px] 
-                       mb-8 sm:mb-10 lg:mb-[80px]">
+        {/* Heading */}
+        <h2 className="text-white font-bold text-[32px] sm:text-[40px] lg:text-[48px] leading-tight mb-10 lg:mb-[80px]">
           Features Like Never
-          <br />
-          Seen Before
+          <br /> Seen Before
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-          {/* LEFT Card */}
-          <div className="lg:row-span-2 bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6 lg:p-8 flex flex-col justify-between">
-            <div className="flex justify-center mt-4">
-              <img src="/bitcoin-to-dollar-exchnage 1.png" className="w-[180px] sm:w-[200px] lg:w-[240px]" />
+          {/* Swap Crypto (BIG) */}
+          <div className="lg:row-span-2 bg-[#1c1c1c]/70 rounded-[32px] p-8 flex flex-col justify-between shadow-[0_0_40px_rgba(0,0,0,0.45)]">
+            <div className="flex justify-center mt-2">
+              <img 
+                src="/bitcoin-to-dollar-exchnage 1.png" 
+                className="w-[326px] h-[326px] object-contain"
+              />
             </div>
-            <div className="mt-6">
-              <h3 className="text-white text-[20px] lg:text-[22px] font-semibold mb-2">
+
+            <div className="mt-10">
+              <h3 className="text-white text-[22px] font-semibold leading-tight mb-3">
                 Swap Crypto<br/>with ease
               </h3>
-              <p className="text-gray-400 text-[14px] leading-[22px]">Swap smarter, not harder with Plena Finance.</p>
+              <p className="text-gray-400 text-sm leading-[22px]">
+                Swap smarter, not harder with Plena Finance – fast,
+                safe and competitive crypto swaps.
+              </p>
             </div>
           </div>
 
-          {/* Others remain unchanged */}
-          <div className="relative bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6">
-            <img src="/lending.png" className="absolute top-4 right-4 w-[52px] sm:w-[60px] lg:w-[72px]" />
-            <div className="pt-[64px]">
-              <h3 className="text-white text-[18px] lg:text-[20px] font-semibold mb-2">Lending<br/>Protocol</h3>
-              <p className="text-gray-400 text-[14px] leading-[22px]">Earn Interest Easily!</p>
-            </div>
-          </div>
+         {/* Lending Protocol */}
+<div className="relative bg-[#1c1c1c]/70 rounded-[32px] p-8 shadow-[0_0_40px_rgba(0,0,0,0.45)] overflow-visible">
+  <img 
+    src="/lending.png" 
+    className="absolute -top-10 right-6 w-[174px] h-[174px] object-contain"  // moved up
+  />
+  <div className="pt-[160px]"> 
+    <h3 className="text-white text-[20px] font-semibold leading-tight mb-2">
+      Lending Protocol
+    </h3>
+    <p className="text-gray-400 text-sm leading-[22px]">
+      Earn Interest with Top Protocols in the Industry with Just a Tap!
+    </p>
+  </div>
+</div>
 
-          <div className="relative bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6">
-            <img src="/stake.png" className="absolute top-4 right-4 w-[52px] sm:w-[60px] lg:w-[72px]" />
-            <div className="pt-[64px]">
-              <h3 className="text-white text-[18px] lg:text-[20px] font-semibold mb-2">Stake your<br/>assets</h3>
-              <p className="text-gray-400 text-[14px] leading-[22px]">Earn rewards securely!</p>
+<div className="relative bg-[#1c1c1c]/70 rounded-[32px] p-8 shadow-[0_0_40px_rgba(0,0,0,0.45)] overflow-visible">
+  <img 
+    src="/stake.png" 
+    className="absolute -top-10 right-6 w-[174px] h-[174px] object-contain"  
+  />
+  <div className="pt-[160px]"> 
+    <h3 className="text-white text-[20px] font-semibold leading-tight mb-2">
+      Stake your assets
+    </h3>
+    <p className="text-gray-400 text-sm leading-[22px]">
+      Earn Interest with Top Protocols in the Industry with Just a Tap!
+    </p>
+  </div>
+</div>
+          {/* Liquidity Pools */}
+          <div className="sm:col-span-2 bg-[#1c1c1c]/70 rounded-[32px] p-8 lg:p-10 flex items-center justify-between gap-6 shadow-[0_0_40px_rgba(0,0,0,0.45)]">
+            <div className="max-w-[380px]">
+              <h3 className="text-white text-[22px] font-semibold leading-tight mb-3">
+                Liquidity Pools
+              </h3>
+              <p className="text-gray-400 text-sm leading-[22px]">
+                Enjoy the best exchange rates across all decentralized exchanges in one place!
+              </p>
             </div>
-          </div>
 
-          <div className="sm:col-span-2 bg-[rgba(32,32,32,0.6)] rounded-[32px] p-6 lg:p-8 flex items-center justify-between gap-6">
-            <div className="max-w-[360px]">
-              <h3 className="text-white text-[20px] lg:text-[22px] font-semibold mb-2">Liquidity Pools</h3>
-              <p className="text-gray-400 text-[14px] leading-[22px]">Best rates across all DEXs!</p>
-            </div>
-            <img src="/mining-cart 1.png" className="w-[140px] sm:w-[160px] lg:w-[200px]" />
+            <img 
+              src="/mining-cart 1.png" 
+              className="w-[238px] h-[238px] object-contain"
+            />
           </div>
 
         </div>
