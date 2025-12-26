@@ -1,7 +1,7 @@
 
 export default function Stats() {
   return (
-    <section className="relative w-full bg-black z-20 mt-12 sm:mt-14 lg:mt-0">
+    <section className="relative w-full z-20 mt-12 sm:mt-14 lg:mt-0">
       <div className="max-w-[900px] mx-auto px-4">
         <div
           className="
@@ -10,9 +10,6 @@ export default function Stats() {
             gap-2 sm:gap-10
             py-6
             px-4
-            rounded-2xl
-            bg-white/5
-            backdrop-blur
           "
         >
           <div>
