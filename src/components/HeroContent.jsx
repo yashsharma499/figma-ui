@@ -1,3 +1,4 @@
+
 export default function HeroContent() {
   return (
     <section className="relative w-full bg-black overflow-hidden z-10">
@@ -23,7 +24,6 @@ export default function HeroContent() {
                 "
               />
 
-              {/* YELLOW UNDERLINE IMAGE (POSITION FIXED) */}
               <img
                 src="/own_hero.png"
                 alt=""
@@ -41,30 +41,22 @@ export default function HeroContent() {
               Account Abstraction
             </p>
 
-            {/* Buttons */}
-            <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
-              <img
-                src="/get-the-app-btn.png"
-                alt="Get the App"
-                className="h-[36px] sm:h-[46px] cursor-pointer"
-              />
-              <img
-                src="/play-icon.png"
-                alt="Watch Intro"
-                className="h-[36px] sm:h-[46px] cursor-pointer"
-              />
+            {/* Buttons — hidden only on mobile */}
+            <div className="mt-8 flex items-center justify-center lg:justify-start gap-4 hidden md:flex">
+              <img src="/get-the-app-btn.png" alt="Get the App" className="h-[36px] sm:h-[46px] cursor-pointer" />
+              <img src="/play-icon.png" alt="Watch Intro" className="h-[36px] sm:h-[46px] cursor-pointer" />
             </div>
           </div>
 
-          {/* ================= RIGHT (PHONES + QR) ================= */}
-          <div className="relative flex justify-center lg:justify-end mt-10 lg:translate-y-[-120px]">
+          {/* ================= RIGHT (Single Phone + QR) ================= */}
+          <div className="relative flex justify-center lg:justify-end mt-6 sm:mt-10 lg:translate-y-[-120px]">
 
             {/* Glow */}
             <div className="absolute inset-0 flex justify-center">
               <div className="w-[420px] h-[420px] lg:w-[700px] lg:h-[700px] bg-purple-500/20 rounded-full blur-[160px]" />
             </div>
 
-            {/* Phones wrapper */}
+            {/* Phone Wrapper */}
             <div
               className="
                 relative
@@ -72,8 +64,8 @@ export default function HeroContent() {
                 max-w-[360px]
                 sm:max-w-[420px]
                 lg:max-w-[700px]
-                h-[320px]
-                sm:h-[420px]
+                h-[350px]           /* moved phone up in mobile */
+                sm:h-[380px]
                 lg:h-[620px]
                 flex
                 items-end
@@ -87,43 +79,25 @@ export default function HeroContent() {
                 className="
                   hidden lg:block
                   absolute
-                  right-0
-                  bottom-[60px]
+                  right-[0px]
+                  bottom-[0px]
                   w-[110px]
                   z-30
                 "
               />
 
-              {/* Back phone */}
+              {/* NEW Single Phone Image */}
               <img
-                src="/hero_phone_back.png"
-                alt="Phone Back"
+                src="/Gemini1.png"
+                alt="Phone Display"
                 className="
                   absolute
                   left-1/2
-                  -translate-x-[85%]
+                  -translate-x-1/2
                   bottom-0
-                  w-[220px]
-                  sm:w-[260px]
-                  lg:w-[380px]
-                  rotate-[6deg]
-                  z-10
-                "
-              />
-
-              {/* Front phone */}
-              <img
-                src="/herophone.png"
-                alt="Phone Front"
-                className="
-                  absolute
-                  left-1/2
-                  -translate-x-[15%]
-                  bottom-0
-                  w-[220px]
-                  sm:w-[260px]
-                  lg:w-[380px]
-                  -rotate-[6deg]
+                  w-[240px]          /* slightly resized looks cleaner in mobile */
+                  sm:w-[300px]
+                  lg:w-[420px]
                   z-20
                 "
               />
@@ -131,10 +105,7 @@ export default function HeroContent() {
           </div>
         </div>
 
-        {/* Mobile note */}
-        <p className="mt-4 text-center text-xs text-gray-400 lg:hidden">
-          *Available for iOS & Android
-        </p>
+       
       </div>
     </section>
   );
