@@ -36,7 +36,7 @@ export default function HeroContent() {
               />
             </div>
 
-            <p className="mt-6 text-gray-400 max-w-[420px] mx-auto lg:mx-0 text-sm sm:text-base">
+            <p className="mt-15 text-gray-400 max-w-[420px] mx-auto lg:mx-0 text-sm sm:text-base">
               Introducing Plena 2.0, Self-Custodial Smart Wallet with EIP-4337:
               Account Abstraction
             </p>

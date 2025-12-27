@@ -1,6 +1,19 @@
 
+import { useState } from "react";
 
 export default function ReviewsAndTeam() {
+
+  /* ================= MOBILE TEAM CAROUSEL STATE ================= */
+  const [index, setIndex] = useState(0);
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 2 < teamData.length ? prev + 2 : 0));
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 2 >= 0 ? prev - 2 : teamData.length - 2));
+  };
+
   return (
     <section className="w-full bg-[#141414] pt-6 pb-0 lg:pt-10 lg:pb-0 overflow-hidden">
 
@@ -17,12 +30,11 @@ export default function ReviewsAndTeam() {
       </div>
 
       {/* ================= MARQUEE AUTO SCROLL ================= */}
-
       <div className="relative mt-6 w-full overflow-hidden">
 
         {/* 🔥 Mobile — Single Row */}
         <div className="flex gap-6 animate-scroll px-4 sm:px-6 lg:hidden">
-          <ReviewRow /> <ReviewRow /> {/* Duplicate for looping */}
+          <ReviewRow /> <ReviewRow />
         </div>
 
         {/* 🔥 Desktop — Dual rows unchanged */}
@@ -48,45 +60,46 @@ export default function ReviewsAndTeam() {
           Protected by a multi-level security architecture and is regularly
         </p>
 
-        {/* -------- MOBILE SLIDER -------- */}
-        <div className="relative mt-8 sm:mt-10 lg:hidden">
-          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-            {teamData.map((m,i)=>(
-              <div key={i} className="min-w-[220px] snap-center flex-shrink-0">
-                <TeamCard member={m}/>
+        {/* -------- MOBILE CAROUSEL (NO SCROLL - SHOW 2 CARDS) -------- */}
+        <div className="relative mt-10 lg:hidden flex justify-center">
+          <div className="flex gap-6 transition-all duration-500">
+            {teamData.slice(index, index + 2).map((m, i) => (
+              <div key={i} className="w-[150px] sm:w-[190px]">
+                <TeamCard member={m} />
               </div>
             ))}
           </div>
         </div>
 
-        {/* -------- MOBILE ARROWS BELOW -------- */}
+        {/* -------- MOBILE BUTTONS -------- */}
         <div className="flex justify-center items-center gap-8 mt-6 lg:hidden">
-          <button className="w-[40px] opacity-80 hover:opacity-100 active:scale-90 transition">
+          <button onClick={prevSlide} className="w-[40px] opacity-80 hover:opacity-100 active:scale-90 transition">
             <img src="/arrow-left.png" />
           </button>
-          <button className="w-[40px] opacity-80 hover:opacity-100 active:scale-90 transition">
-            <img src="/arrow-right.png"/>
+          <button onClick={nextSlide} className="w-[40px] opacity-80 hover:opacity-100 active:scale-90 transition">
+            <img src="/arrow-right.png" />
           </button>
         </div>
 
-        {/* -------- DESKTOP GRID + ARROWS -------- */}
+        {/* -------- DESKTOP GRID -------- */}
         <div className="relative mt-10 hidden lg:flex items-center justify-center">
           <button className="absolute left-0 w-[40px] opacity-70 hover:opacity-100 transition">
             <img src="/arrow-left.png" />
           </button>
 
           <div className="flex gap-8">
-            {teamData.map((m,i)=>(
+            {teamData.map((m, i) => (
               <div key={i} className="w-[220px]">
-                <TeamCard member={m}/>
+                <TeamCard member={m} />
               </div>
             ))}
           </div>
 
           <button className="absolute right-0 w-[40px] opacity-70 hover:opacity-100 transition">
-            <img src="/arrow-right.png"/>
+            <img src="/arrow-right.png" />
           </button>
         </div>
+
       </div>
 
       {/* ================= ANIMATIONS ================= */}
@@ -100,15 +113,14 @@ export default function ReviewsAndTeam() {
   );
 }
 
-
 /* ================= TEAM CARD ================= */
 function TeamCard({ member }) {
   return (
     <div className="rounded-[24px] overflow-hidden bg-black">
-      <div className="group relative h-[260px] overflow-hidden rounded-[20px]">
-        <img src={member.image} className="w-full h-full object-cover transition duration-500 group-hover:scale-105"/>
-        <div className="absolute inset-0 bg-black/75 flex items-center justify-center opacity-0 
-            group-hover:opacity-100 transition duration-500 px-4 text-center">
+      <div className="group relative h-[240px] sm:h-[260px] overflow-hidden rounded-[20px]">
+        <img src={member.image} className="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 
+          group-hover:opacity-100 transition duration-500 px-4 text-center">
           <p className="text-white text-[12px] leading-[18px]">{member.bio}</p>
         </div>
       </div>
@@ -116,7 +128,9 @@ function TeamCard({ member }) {
       <div className="px-4 pt-4 pb-6 text-left">
         <h4 className="text-white text-[16px] font-medium">{member.name}</h4>
         <p className="text-[#9CA3AF] text-[13px] mt-1">{member.role}</p>
+
         <div className="w-[34px] h-[1px] bg-[#6B7280] mt-3 mb-3"></div>
+
         <div className="text-[13px] flex items-center gap-2">
           <a className="text-[#8B5CF6] hover:underline">LinkedIn</a>
           <span className="text-gray-500">|</span>
@@ -135,7 +149,7 @@ const teamData = [
   { name:"Kate Winslet", role:"Marketing", image:"/person1.png", bio:"Growth-focused marketer with deep crypto insights." },
 ];
 
-/* ================= REVIEW CARD ROW ================= */
+/* ================= REVIEW CARDS ================= */
 function ReviewRow() {
   return (
     <>

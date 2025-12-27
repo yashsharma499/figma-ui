@@ -1,7 +1,7 @@
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full bg-black flex justify-center py-14 lg:py-[120px]">
+    <section className="hidden sm:flex w-full bg-black justify-center py-14 lg:py-[120px]">
       <div className="w-full max-w-[1328px] px-4 sm:px-6">
 
         {/* Heading */}
