@@ -45,7 +45,9 @@ export default function ReviewsAndTeam() {
 
 {/* ============================= TEAM SECTION ============================= */}
 
-      <div className="w-full bg-black mt-10 pt-12 pb-10 px-4 sm:px-6 lg:px-20 text-center min-h-[692px]">
+      {/* <div className="w-full bg-black mt-10 pt-12 pb-10 px-4 sm:px-6 lg:px-20 text-center min-h-[692px]"> */}
+{/* <div className="w-full bg-black mt-10 pt-12 pb-2 sm:pb-8 lg:pb-10 px-4 sm:px-6 lg:px-20 text-center min-h-[692px]"> */}<div className="w-full bg-black mt-10 pt-12 pb-2 sm:pb-8 lg:pb-10 px-4 sm:px-6 lg:px-20 text-center 
+     min-h-auto lg:min-h-[692px]">
 
         <h2 className="text-white text-[26px] sm:text-[30px] md:text-[34px] font-semibold">The Team</h2>
         <p className="text-gray-400 text-[13px] sm:text-[15px] mt-2 max-w-[400px] mx-auto">
